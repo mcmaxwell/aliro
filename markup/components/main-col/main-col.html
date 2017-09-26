@@ -1,0 +1,65 @@
+<div class="main-col">
+  <div class="main-col__top">
+    <a href="#" class="back-list">back</a>
+    <div class="main-col__top-info">
+      <div class="main-col__top-img user-avatar">
+        <img src="%=static=%img/content/avatar.png" srcset="%=static=%img/content/avatar.png 1x, %=static=%img/content/avatar@2x.png 2x, %=static=%img/content/avatar@3x.png 3x" alt="Ivan Dunskiy" />
+      </div>
+      <div class="main-col__top-text">
+        <div class="main-col__top-name user-name">Michael Davis</div>
+        <div class="main-col__top-contract">Contract #1244, Buying 10tons Olives from Panama</div>
+      </div>
+    </div>
+    <div class="main-col__top-action">
+      <a href="#" class="button">view files</a>
+      <a href="#" class="button">Contract details</a>
+    </div>
+  </div>
+
+  <div class="main-content">
+    <div class="main-content__state">
+      <div class="main-content__state-date">28 January 2017</div>
+      <ol class="main-content__state-progress">
+        <li class="main-content__state-step done">New</li>
+        <li class="main-content__state-step working">In Progress</li>
+        <li class="main-content__state-step">Signed</li>
+        <li class="main-content__state-step">Closed</li>
+      </ol>
+    </div>
+    <div class="main-content__messages">
+      <div class="main-content__messages-place">
+        {{#each messagesDaytime}}
+          <div class="messages-daytime">
+            <div class="messages-date">{{this.date}}</div>
+          {{#each this.messagesList}}
+            <div class="messages-item {{this.from}} {{this.first}}">
+              <div class="messages-item__content">
+                {{#if this.from}}
+                  <div class="messages-item__img user-avatar">
+                    {{#if this.src}}
+                      <img src="{{this.src}}" srcset="{{this.src}}, {{this.srcx2}} 2x, {{this.srcx3}} 3x" alt="{{this.name}}" />
+                    {{/if}}
+                  </div>
+                {{/if}}
+                <div class="messages-item__text">{{this.text}}</div>
+              </div>
+              <div class="messages-item__time">{{this.time}}</div>
+            </div>
+          {{/each}}
+          </div>
+
+        {{/each}}
+      </div>
+      <div class="main-content__messages-sending">
+        <form>
+          <textarea name="message" placeholder="Type message here"></textarea>
+          <label for="file-upload" class="custom-file-upload">
+              Custom Upload
+          </label>
+          <input id="file-upload" type="file" />
+          <button id="send-message">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

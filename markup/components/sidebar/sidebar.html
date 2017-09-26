@@ -1,0 +1,50 @@
+<div class="sidebar">
+  <div class="sidebar__tabs">
+      <div class="sidebar__tabs-item">
+        <a href="#" class="sidebar__tabs-item-title active">messages</a>
+      </div>
+      <div class="sidebar__tabs-item">
+        <a href="#" class="sidebar__tabs-item-title">clients</a>
+      </div>
+      <div class="sidebar__tabs-item">
+        <a href="#" class="sidebar__tabs-item-title sidebar__tabs-item-search"></a>
+      </div>
+  </div>
+  <div class="sidebar__content">
+    <div class="sidebar__content-list sidebar__messages-list active">
+      {{#each messagesList }}
+        <a href="#" class="sidebar__messages-item">
+            <div class="sidebar__messages-item-img user-avatar">
+              {{#if this.src}}
+                <img src="{{this.src}}" srcset="{{this.src}}, {{this.srcx2}} 2x, {{this.srcx3}} 3x" alt="{{this.name}}" />
+              {{/if}}            </div>
+            <div class="sidebar__messages-item-info">
+              <div class="sidebar__messages-item-name user-name">{{this.name}}</div>
+              <div class="sidebar__messages-item-contract">{{this.contract}}</div>
+              <div class="sidebar__messages-item-message">{{this.message}}</div>
+              {{#if counter}} <span class="counter-messages">{{this.counter}}</span>{{/if}}
+            </div>
+        </a>
+      {{/each}}
+    </div>
+    <div class="sidebar__content-list sidebar__clients-list">
+      {{#each clientsList }}
+        <a href="#" class="sidebar__messages-item">
+            <div class="sidebar__messages-item-img user-avatar">
+              {{#if this.src}}
+                <img src="{{this.src}}" srcset="{{this.src}}, {{this.srcx2}} 2x, {{this.srcx3}} 3x" alt="{{this.name}}" />
+              {{/if}}
+            </div>
+            <div class="sidebar__messages-item-info">
+              <div class="sidebar__messages-item-name user-name">{{this.name}}</div>
+              {{#if counter}} <span class="counter-messages">{{this.counter}}</span>{{/if}}
+            </div>
+        </a>
+      {{/each}}
+    </div>
+    <div class="sidebar__content-list sidebar__clients-list sidebar__clients-search">
+      <input type="text" placeholder="Michael Davis"/>
+      <span class="empty">List is empty</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,165 @@
+.sidebar {
+  width: 0;
+  position: absolute;
+  left: 0;
+  top: $height-header;
+  bottom: 0;
+  z-index: 200;
+  overflow: hidden;
+  transition: all $default-time;
+  background-color: #fff;
+
+  @media(min-width: $laptop-width) {
+    width: $sidebar-width;
+  }
+
+  &.active {
+    width: 100%;
+    @media(min-width: $laptop-width) {
+      width: $sidebar-width;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__tabs {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $light-grey;
+    position: relative;
+    z-index: 100;
+
+    &-item {
+      border-right: 1px solid $light-grey;
+      width: 100%;
+
+      &:last-child {
+        width: $height-header;
+      }
+
+      &-search {
+        text-indent: -9999em;
+        display: flex;
+        position: relative;
+        width: $height-header;
+        &:before {
+          content: "\e900";
+          text-indent: 0;
+          color: $brand-color;
+          font-family: $icons;
+
+          left: 5px;
+          top: 5px;
+          font-size: 20px;
+        }
+      }
+    }
+
+    &-item-title {
+      text-decoration: none;
+      height: $sidebar-top-height;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #000;
+      background-color: $light-grey;
+      text-transform: uppercase;
+      transition: all $default-time;
+      @media(min-width: $laptop-width) {
+        width: 128px;
+      }
+      &.active,
+      &:hover {
+        background: none;
+        color: $brand-color;
+      }
+    }
+  }
+
+  &__content-list {
+    position: absolute;
+    top: $height-header;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    display: none;
+    opacity: 0;
+    padding: 20px;
+    transition: all $default-time;
+
+    &.active {
+      opacity: 1;
+      display: block;
+    }
+  }
+
+  &__messages-list {
+    overflow: auto;
+  }
+
+  &__messages-item {
+    margin-bottom: 17px;
+    display: flex;
+    text-decoration: none;
+    color: #000;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 3%, #fff);
+    }
+
+    &:hover {
+      .sidebar__messages-item-name::after {
+        width: 100%;
+        background-color: #000;
+      }
+      .sidebar__messages-item-img {
+        border-color: $brand-color
+      }
+    }
+
+    &-name {
+      display: inline-block;
+    }
+
+    &-info {
+      overflow: hidden;
+      padding-top: 8px;
+    }
+
+    &-message {
+      white-space: nowrap;
+      color: #4a4a4a;
+    }
+
+    .counter-messages {
+      position: absolute;
+      top: 10px;
+      right: 0;
+      z-index: 100;
+    }
+  }
+}
+
+.sidebar__clients-search {
+  .empty {
+    padding: 20px 10px;
+    display: block;
+  }
+}

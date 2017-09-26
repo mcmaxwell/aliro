@@ -1,0 +1,21 @@
+<header class="header">
+  <a href="/" class="logo">Aliro</a>
+  <nav>
+    <ul class="menu header__menu">
+      {{#each menuList }}
+        <li><a href="{{this.link}}" class="header__menu-link {{#if active}} {{this.active}}{{/if}}">{{this.text}}{{#if messages}} <span class="counter-messages">{{this.messages}}</span>{{/if}} </a></li>
+      {{/each}}
+    </ul>
+    <a class="header__profile" href="#">
+      <div class="header__profile-img user-avatar">
+        <img src="%=static=%img/content/my_avatar.png" srcset="%=static=%img/content/my_avatar.png 1x, %=static=%img/content/my_avatar@2x.png 2x, %=static=%img/content/my_avatar@3x.png 3x" alt="Ivan Dunskiy" />
+      </div>
+      <div class="header__profile-info">
+        <span class="header__profile-name user-name">Ivan Dunskiy</span>
+        <span class="header__profile-company">aliro</span>
+      </div>
+    </a>
+    <a href="#" class="logout">Logout</a>
+  </nav>
+  <a href="#" class="header__toggle"><span></span></a>
+</header>

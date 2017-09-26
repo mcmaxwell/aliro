@@ -1,0 +1,26 @@
+// GUI stylies of the project
+// For example, styles of the links, buttons and so on.
+.button {
+  min-width: 160px;
+  padding: 13px;
+  border-radius: 5px;
+  background-color: $button-bg;
+  color: $button-color;
+  text-transform: uppercase;
+  font-size: rem-calc(12);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all $default-time;
+  display: inline-block;
+  text-align: center;
+
+  &:hover {
+    background-color: $action-color;
+  }
+}
+
+input {
+  padding: 10px 15px;
+  width: 100%;
+}

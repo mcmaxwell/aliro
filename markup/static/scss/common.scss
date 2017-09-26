@@ -1,0 +1,179 @@
+// Common styles of the project
+
+html, body {
+    height: 100%;
+}
+
+body {
+  font-family: $default-font;
+  font-size: rem-calc(13);
+  font-weight: 400;
+  min-width: 320px;
+
+}
+@media(min-width: $laptop-width) {
+  ::-webkit-scrollbar-thumb {
+    background-color: $brand-color;
+    width: 6px;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar {
+  	width: 6px;
+  }
+}
+
+.page__wrapper {
+    min-height: 100%;
+    min-width: 320px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+* html .page__wrapper {
+    height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transition: all $default-time;
+  }
+}
+
+.main-container {
+  display: flex;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 7.5px;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  a {
+    padding: 33px;
+    color: #fff;
+    text-decoration: none;
+    font-size: rem-calc(15);
+  }
+}
+
+.logout {
+  text-indent: -9999em;
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  transition: all $default-time;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:before {
+    content: "\e902";
+    text-indent: 0;
+    color: $header-color;
+    font-family: $icons;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    font-size: 20px;
+  }
+}
+
+.counter-messages {
+  background-color: $action-color;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  border-radius: 50%;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  font-size: rem-calc(10);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.user-avatar {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: all $default-time;
+  margin-right: 30px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.user-name {
+  display: block;
+  font-weight: 500;
+  line-height: 1.15;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition: all $default-time;
+  }
+}
+
+.back-list {
+  text-decoration: none;
+  color: #000;
+  display: flex;
+  width: 70px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  border-right: 2px solid $light-grey;
+  transition: all $default-time;
+  background-color: $light-grey;
+
+  @media(min-width: $laptop-width) {
+    display: none;
+  }
+
+  &:hover {
+    color: $brand-color;
+    background-color: #fff;
+  }
+}
